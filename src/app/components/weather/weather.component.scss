@@ -4,6 +4,10 @@
 
 ion-text{
   display: block;
+  &.temp{
+    font-size: larger;
+    font-weight: bold;
+  }
 }
 
 ion-img {

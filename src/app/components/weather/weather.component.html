@@ -3,7 +3,7 @@
     
       <ion-text>{{weather.date | date}}</ion-text>
       <ion-img [src]="'https://openweathermap.org/img/wn/' +weather.icon+ '@2x.png'"></ion-img>
-      <ion-text color="primary">{{weather.temp}}&#8451;</ion-text>
+      <ion-text class="temp" color="primary">{{weather.temp}}&#8451;</ion-text>
       <ion-text>{{weather.name}}</ion-text>
       <ion-text>{{weather.description}}</ion-text>
 
