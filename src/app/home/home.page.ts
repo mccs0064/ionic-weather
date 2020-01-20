@@ -27,7 +27,7 @@ export class HomePage implements OnInit {
   }
 
   getWeather(lat: number, lng: number) {
-    this.weatherService.getWeatherFromLatLng(lat, lng).subscribe(
+    this.weatherService.getWeatherForLatLng(lat, lng).subscribe(
       {
         next: (weather: Weather) => this.weather = weather
       }

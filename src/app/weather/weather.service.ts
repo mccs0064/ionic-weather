@@ -25,7 +25,7 @@ export class WeatherService {
     );
   }
 
-  getWeatherFromLatLng(lat: number, lng: number): Observable<Weather> {
+  getWeatherForLatLng(lat: number, lng: number): Observable<Weather> {
     const url = `${API_BASE_URL}/weather${APPID}&lat=${lat}&lon=${lng}${METRIC}`;
 
     return this.http.get(url).pipe(
