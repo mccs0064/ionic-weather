@@ -1,14 +1,25 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Weather App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content padding>
+  <h2>Current Weather</h2>
+  
+  <ion-spinner *ngIf="!weather" color="primary" name="crescent"></ion-spinner>
+  <app-weather *ngIf="weather" [weather]='weather'></app-weather>
+  
+  <h2>Get The 5 Day Weather Forecast</h2>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Enter City</ion-label>
+      <ion-input [(ngModel)]="searchText" name="name" type="text" required></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-button color="primary" [disabled]="!searchText" (click)="onSubmit(searchText)">
+    Submit
+  </ion-button>
 </ion-content>

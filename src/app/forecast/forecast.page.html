@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>5 Day Forcast for: {{city | titlecase}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="forecast" lines="none">
+    <ion-item *ngFor='let weather of forecast'>
+      <app-weather [weather]="weather"></app-weather>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { HomePage } from './home.page';
+import { Geolocation } from '@ionic-native/geolocation/ngx';
+import { ComponentsModule } from '../components/components.module';
 
 @NgModule({
   imports: [
@@ -16,8 +18,10 @@ import { HomePage } from './home.page';
         path: '',
         component: HomePage
       }
-    ])
+    ]),
+    ComponentsModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage],
+  providers: [Geolocation]
 })
 export class HomePageModule {}
